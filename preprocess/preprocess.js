@@ -20,8 +20,6 @@ const TOK_ESP_IDF_ERROR_INFO_LOOKUP_TABLE = "/* ESP_IDF_ERROR_INFO_LOOKUP_TABLE 
 const TOK_ESP_IDF_ERROR_FROM_CODE_LOOKUP_TABLE = "/* ESP_IDF_ERROR_FROM_CODE_LOOKUP_TABLE */";
 const TOK_ESP_IDF_CODE_FROM_ERROR_LOOKUP_TABLE = "/* ESP_IDF_CODE_FROM_ERROR_LOOKUP_TABLE */";
 
-
-
 function parseErrorInfoLine(input) {
     input = input
       .replace(":", "")
@@ -81,10 +79,10 @@ const filledErrorCodesLine =
     ESP_IDF_ERROR_CODES_LINE
       .replace("%SIZE%", errorCodesLength)
       .replace("%ELEMENTS%", errorCodes.join(", "));
+
 const filledErrorCountLine =
     ESP_IDF_ERROR_COUNT_LINE
         .replace("%SIZE%", errorCodesLength);
-
 
 const processPasses = [
     [TOK_ESP_IDF_ERROR_COUNT, [filledErrorCountLine]],

@@ -1127,6 +1127,10 @@ impl IdfError {
     }
 }
 
+pub const fn is_esp_idf_error(code: esp_err_t) -> bool {
+    IdfError::error_from_code(code).is_some()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
